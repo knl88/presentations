@@ -7,30 +7,13 @@ paginate: true
 _paginate: false
 ---
 
-![bg](./assets/gradient.jpg)
-
-# <!--fit--> Marp CLI example
-
-Hosting Marp slide deck on the web
-
-https://github.com/yhatt/marp-cli-example
-
-<style scoped>a { color: #eee; }</style>
-
-<!-- This is presenter note. You can write down notes through HTML comment. -->
-
----
-
-![Marp bg 60%](https://raw.githubusercontent.com/marp-team/marp/master/marp.png)
+![Marp bg 60%](https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png)
 
 ---
 
 ![bg](#123)
 ![](#fff)
-
-##### <!--fit--> [Marp CLI](https://github.com/marp-team/marp-cli) + [GitHub Pages](https://github.com/pages) | [Netlify](https://www.netlify.com/) | [Vercel](https://vercel.com/)
-
-##### <!--fit--> 👉 The easiest way to host<br />your Marp deck on the web
+##### <!--fit--> 👉 The easiest way to run code
 
 ---
 
