@@ -1,6 +1,6 @@
 ---
 marp: true
-title: Docker playground
+title: Sample
 description: Docker stuff
 theme: uncover
 paginate: true
