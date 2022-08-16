@@ -84,5 +84,3 @@ ADD ssh /root/.ssh
 ### <!--fit--> :ok_hand:
 
 ---
-
-![bg 40% opacity blur](https://avatars1.githubusercontent.com/u/3993388?v=4)
