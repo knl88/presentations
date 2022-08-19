@@ -74,6 +74,9 @@ Making it easy for others to use your code❗
 shipping code 🚢
 
 ---
+![bg](#123)
+![](#fff)
+
 # <!--fit--> 🏗️ The Dockerfile
 
 
@@ -103,6 +106,9 @@ CMD ["hello-docker.py"]
 docker run -it --entrypoint /bin/bash hello-docker:latest
 ```
 ---
+![bg](#123)
+![](#fff)
+
 # Build tips
 
 - Order of instructions matters
@@ -117,6 +123,9 @@ In most cases you can find images on [dockerhub](https://hub.docker.com/search).
 For internal niva images you need to follow instructions on [google cloud artifactory setup](https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling) and go to the [artifactory](https://console.cloud.google.com/artifacts/docker/niva-cd/europe-west1/images?project=niva-cd).
 
 ---
+![bg](#123)
+![](#fff)
+
 # Running an oracle Express db
 
 ```bash
