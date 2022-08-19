@@ -76,11 +76,57 @@ shipping code 🚢
 ---
 # <!--fit--> 🏗️ The Dockerfile
 
+
 ``` docker
-FROM ubuntu:18.04
-ADD ssh /root/.ssh
+FROM python:3.8-slim
+
+RUN pip install emoji
+
+WORKDIR /app
+
+COPY hello-docker.py ./
+
+RUN useradd -u 999 non-root-user
+USER non-root-user
+
+ENTRYPOINT ["python"]
+CMD ["hello-docker.py"]
+```
+---
+# Building and running the image
+
+1. Clone this [presentation](https://github.com/knl88/presentations) and go to the [./docker](./docker) folder
+2. Run `docker build . -t hello-docker:latest`
+3. Run `docker run hello-docker`
+4. Inspect the container 
+```bash 
+docker run -it --entrypoint /bin/bash hello-docker:latest
+```
+---
+# Build tips
+
+- Order of instructions matters
+- Add the files needed .i.e not `COPY . .`
+- Try to build small final images, [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/) can be helpful
+- Change user to non root user
+---
+# Finding images
+
+In most cases you can find images on [dockerhub](https://hub.docker.com/search). 
+
+For internal niva images you need to follow instructions on [google cloud artifactory setup](https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling) and go to the [artifactory](https://console.cloud.google.com/artifacts/docker/niva-cd/europe-west1/images?project=niva-cd).
+
+---
+# Running an oracle Express db
+
+```bash
+docker run --name oracle-test \
+            -p 1521:1521 \
+            -e ORACLE_PASSWORD=oracle \
+            -e ORACLE_DATABASE=NIVABPRD \
+            -e APP_USER=niva \
+            -e APP_USER_PASSWORD=niva \
+gvenzl/oracle-xe:21
 ```
 ---
 ### <!--fit--> :ok_hand:
-
----
