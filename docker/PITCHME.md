@@ -21,7 +21,7 @@ _paginate: false
     - and a container makes in possible to package and isolate applications with their entire runtime environment
 2. An open source community 
 3. The company docker
-Also see [Redhat on docker](https://www.redhat.com/en/topics/containers/what-is-docker)
+Also see [Redhat's post](https://www.redhat.com/en/topics/containers/what-is-docker)
 ---
 
 ---
