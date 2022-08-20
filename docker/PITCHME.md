@@ -14,12 +14,22 @@ _paginate: false
 ![bg](#123)
 ![](#fff)
 ##### <!--fit--> 👉 Making your life easier:)
+---
+###  About
+
+1. Containerization technology
+    - and a container makes in possible to package and isolate applications with their entire runtime environment
+2. An open source community 
+3. The company docker
+Also see [Redhat on docker](https://www.redhat.com/en/topics/containers/what-is-docker)
+---
 
 ---
 # Installation
 **Follow 🐋 for** 
-[![For Linux h:1.5em](https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg)](https://docs.docker.com/engine/install/), [![Windows h:1.5em](https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Logo_%281992-2001%29.svg)](https://docs.p.niva.no/guides/devenv.html), [![Apple h:1.5em](https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg)](https://github.com/abiosoft/colima/#installation)
-
+[![For Linux h:1.5em](https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg)](https://docs.docker.com/engine/install/ubuntu/), [![Windows h:1.5em](https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Logo_%281992-2001%29.svg)](https://docs.p.niva.no/guides/devenv.html), [![Apple h:1.5em](https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg)](https://github.com/abiosoft/colima/#installation)
+**Or**
+[![Docker desktop h:2em](https://i2.wp.com/ralphmcneal.com/wp-content/uploads/2018/11/docker-desk-banner1.png?fit=770%2C403&ssl=1)](https://www.docker.com/products/docker-desktop/)
 **Or install** 
 [![podman h:2em](https://podman.io/images/podman.svg)](https://podman.io/) 
 **for your distro**
