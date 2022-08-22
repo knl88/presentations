@@ -15,11 +15,11 @@ _paginate: false
 ![](#fff)
 ##### <!--fit--> 👉 Making your life easier:)
 ---
-###  About
+###  The name docker is used about:
 
-1. Containerization technology
-    - and a container makes in possible to package and isolate applications with their entire runtime environment
-2. An open source community 
+1. Docker containerization technology
+    - a container makes in possible to package and isolate applications with their entire runtime environment
+2. The docker open source community 
 3. The company docker
 Also see [Redhat's post](https://www.redhat.com/en/topics/containers/what-is-docker)
 ---
