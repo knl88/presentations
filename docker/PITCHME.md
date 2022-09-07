@@ -23,8 +23,6 @@ _paginate: false
 3. The company docker
 Also see [Redhat's post](https://www.redhat.com/en/topics/containers/what-is-docker)
 ---
-
----
 # Installation
 **Follow 🐋 for** 
 [![For Linux h:1.5em](https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg)](https://docs.docker.com/engine/install/ubuntu/), [![Windows h:1.5em](https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Logo_%281992-2001%29.svg)](https://docs.p.niva.no/guides/devenv.html), [![Apple h:1.5em](https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg)](https://github.com/abiosoft/colima/#installation)
@@ -66,7 +64,7 @@ docker run -it ubuntu:latest
 
 then, in a different terminal
 ``` bash
-# shows the running container
+# shows the running containers
 docker ps
 ```
 
@@ -147,5 +145,29 @@ docker run --name oracle-test \
             -e APP_USER_PASSWORD=niva \
 gvenzl/oracle-xe:21
 ```
+---
+### docker-compose 
+`docker-compose` -> `docker compose`
+
+docker-compose has been rewritten to a Golang plugin for docker 
+
+---
+
+![bg](#123)
+![](#fff)
+
+# docker compose install
+* Already installed if using Docker Desktop
+* For linux distro's see [compose install](https://docs.docker.com/compose/install/)
+* For thumbleweed 😎
+```bash
+zypper in docker-compose
+```
+
+
+There's no v2 autocomplete currently :(
+
+---
+
 ---
 ### <!--fit--> :ok_hand:
