@@ -178,7 +178,7 @@ docker-compose has been rewritten to a Golang plugin for docker
 <!-- _backgroundColor: "#123" -->
 <!-- _color: "#fff" -->
 
-# docker compose install
+# docker compose install 
 * Already installed if using Docker Desktop
 * For linux distro's see [compose install](https://docs.docker.com/compose/install/)
 * For thumbleweed 😎
@@ -186,14 +186,14 @@ docker-compose has been rewritten to a Golang plugin for docker
 zypper in docker-compose
 ```
 ---
-# Commands
+# <!--fit--> Commands 🏗️
 
 * `docker compose build`
 * `docker compose up`
 * `docker compose down --volumes`
 
 ---
-# <!--fit--> 🏗️ The compose file
+# The compose file
 
 
 ``` yaml
@@ -209,7 +209,7 @@ services:
       - "5000:5000"
 ```
 ---
-# Python shiny app
+# Python shiny ☀️ app
 
 Still in the [./docker](./docker) folder run
 
