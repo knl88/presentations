@@ -11,8 +11,8 @@ _paginate: false
 
 ---
 
-![bg](#123)
-![](#fff)
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
 ##### <!--fit--> 👉 Making your life easier:)
 ---
 ###  The name docker is used about:
@@ -29,12 +29,12 @@ Also see [Redhat's post](https://www.redhat.com/en/topics/containers/what-is-doc
 **Or**
 [![Docker desktop h:2em](https://i2.wp.com/ralphmcneal.com/wp-content/uploads/2018/11/docker-desk-banner1.png?fit=770%2C403&ssl=1)](https://www.docker.com/products/docker-desktop/)
 **Or install** 
-[![podman h:2em](https://podman.io/images/podman.svg)](https://podman.io/) 
+[![podman h:2em](https://raw.githubusercontent.com/containers/common/main/logos/podman-logo-full-vert.png)](https://podman.io/) 
 **for your distro**
 
 ---
-![bg](#123)
-![](#fff)
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
 # Getting started
 
 ``` bash
@@ -52,8 +52,8 @@ docker --help
 
 ## Install  [docker autocomplete](https://docs.docker.com/compose/completion/)
 ---
-![bg](#123)
-![](#fff)
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
 
 #  <!--fit--> Using containers 🐛
 
@@ -82,8 +82,8 @@ Making it easy for others to use your code❗
 shipping code 🚢
 
 ---
-![bg](#123)
-![](#fff)
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
 
 # <!--fit--> 🏗️ The Dockerfile
 
@@ -108,21 +108,28 @@ CMD ["hello-docker.py"]
 
 1. Clone this [presentation](https://github.com/knl88/presentations) and go to the [./docker](./docker) folder
 2. Run `docker build . -t hello-docker:latest`
-3. Run `docker run hello-docker`
-4. Inspect the container 
-```bash 
-docker run -it --entrypoint /bin/bash hello-docker:latest
-```
+
 ---
-![bg](#123)
-![](#fff)
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
 
 # Build tips
 
 - Order of instructions matters
 - Add the files needed .i.e not `COPY . .`
 - Try to build small final images, [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/) can be helpful
-- Change user to non root user
+
+---
+# Build args & secrets
+
+These are used during build:) but be careful with what you pass in, args are stored in the image history
+
+```bash
+docker history hello-docker:latest
+```
+
+instead use buildx secrets if needed
+
 ---
 # Finding images
 
@@ -131,30 +138,45 @@ In most cases you can find images on [dockerhub](https://hub.docker.com/search).
 For internal niva images you need to follow instructions on [google cloud artifactory setup](https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling) and go to the [artifactory](https://console.cloud.google.com/artifacts/docker/niva-cd/europe-west1/images?project=niva-cd).
 
 ---
-![bg](#123)
-![](#fff)
+#  Running containers
 
-# Running an oracle Express db
-
-```bash
-docker run --name oracle-test \
-            -p 1521:1521 \
-            -e ORACLE_PASSWORD=oracle \
-            -e ORACLE_DATABASE=NIVABPRD \
-            -e APP_USER=niva \
-            -e APP_USER_PASSWORD=niva \
-gvenzl/oracle-xe:21
+- *default* `docker run hello-docker`
+- *cmd* `docker run -it hello-docker:latest :yarn:`
+-  *entrypoint*
+```bash 
+docker run -it --entrypoint /bin/python hello-docker:latest
 ```
+
 ---
-### docker-compose 
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
+# Configure the container
+
+Config as **ENV** variables
+
+1. Using --env or -e 
+`docker run -e NIVA_ENV=1 hello-docker`
+2. Using --env-file 
+`docker run --env-file .env hello-docker`
+
+---
+# Configure the container
+mount file
+```bash
+docker run  -e FAVOURITE_PATH=/app/favorite.emojis \
+--mount type=bind,source="$(pwd)"/favorite.emojis,target=/app/favorite.emojis,readonly \
+hello-docker
+```
+
+---
+### docker compose 
 `docker-compose` -> `docker compose`
 
 docker-compose has been rewritten to a Golang plugin for docker 
 
 ---
-
-![bg](#123)
-![](#fff)
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
 
 # docker compose install
 * Already installed if using Docker Desktop
@@ -163,11 +185,46 @@ docker-compose has been rewritten to a Golang plugin for docker
 ```bash
 zypper in docker-compose
 ```
+---
+# Commands
 
-
-There's no v2 autocomplete currently :(
+* `docker compose build`
+* `docker compose up`
+* `docker compose down --volumes`
 
 ---
+# <!--fit--> 🏗️ The compose file
+
+
+``` yaml
+version: '3.5'
+services:
+  app:
+    build: .
+    entrypoint: ["shiny", "run", "--host", "0.0.0.0", "--port", "5000", "app.py"]
+    environment:
+      - SERVER=https://thredds.niva.no
+      - DATASET=msource-inlet.nc
+    ports:
+      - "5000:5000"
+```
+---
+# Python shiny app
+
+Still in the [./docker](./docker) folder run
+
+`docker compose up`
+
+and go to 
+
+http://localhost:5000/
+
+---
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
+# Dockerbasen
+
+compose [example](https://github.com/NIVANorge/nivabase/tree/docker)
 
 ---
 ### <!--fit--> :ok_hand:

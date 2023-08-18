@@ -1,0 +1,8 @@
+emoji
+shiny
+xarray
+netcdf4
+hvplot
+shinywidgets
+ipyleaflet
+matplotlib
