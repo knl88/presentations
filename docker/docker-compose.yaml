@@ -2,9 +2,9 @@ version: '3.5'
 services:
   app:
     build: .
-    entrypoint: ["shiny", "run", "--host", "0.0.0.0", "--port", "5000", "app.py"]
+    entrypoint: shiny run --host 0.0.0.0 --port 6000 app.py
     environment:
       - SERVER=https://thredds.niva.no
       - DATASET=msource-inlet.nc
     ports:
-      - "5000:5000"
+      - "5000:6000"

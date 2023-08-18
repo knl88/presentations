@@ -186,13 +186,6 @@ docker-compose has been rewritten to a Golang plugin for docker
 zypper in docker-compose
 ```
 ---
-# <!--fit--> Commands 🏗️
-
-* `docker compose build`
-* `docker compose up`
-* `docker compose down --volumes`
-
----
 # The compose file
 
 
@@ -201,13 +194,20 @@ version: '3.5'
 services:
   app:
     build: .
-    entrypoint: ["shiny", "run", "--host", "0.0.0.0", "--port", "5000", "app.py"]
+    entrypoint: shiny run --host 0.0.0.0 --port 6000 app.py
     environment:
       - SERVER=https://thredds.niva.no
       - DATASET=msource-inlet.nc
     ports:
-      - "5000:5000"
+      - "5000:6000"
 ```
+---
+# Commands 🏗️
+
+* `docker compose build`
+* `docker compose up`
+* `docker compose down --volumes`
+++ justrun `docker compose help`
 ---
 # Python shiny ☀️ app
 
