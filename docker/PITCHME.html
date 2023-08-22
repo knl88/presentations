@@ -113,12 +113,10 @@ docker ps
 <pre><code class="language-docker"><span class="hljs-keyword">FROM</span> alpine/git
 
 <span class="hljs-keyword">RUN</span><span class="bash"> apk add --no-cache openssh-client</span>
-
 <span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p -m 0600 ~/.ssh &amp;&amp; ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts</span>
 
 <span class="hljs-comment"># Some private repo</span>
 <span class="hljs-keyword">RUN</span><span class="bash"> --mount=<span class="hljs-built_in">type</span>=ssh git <span class="hljs-built_in">clone</span> git@github.com:NIVANorge/STOP_import_GUI.git STOP</span>
-
 <span class="hljs-keyword">WORKDIR</span><span class="bash"> /git/STOP</span>
 
 <span class="hljs-keyword">CMD</span><span class="bash"> [<span class="hljs-string">&quot;log&quot;</span>]</span>
