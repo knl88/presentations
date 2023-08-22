@@ -131,6 +131,29 @@ docker history hello-docker:latest
 instead use buildx secrets if needed
 
 ---
+
+### BUILD SECRETS(ssh)
+###### Create a `Dockerfile` 
+```docker
+FROM alpine/git
+
+RUN apk add --no-cache openssh-client
+
+RUN mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+# Some private repo
+RUN --mount=type=ssh git clone git@github.com:NIVANorge/STOP_import_GUI.git STOP
+
+WORKDIR /git/STOP
+
+CMD ["log"]
+```
+```bash
+docker build --ssh default . -t secret-example && docker run secret-example
+```
+---
+<!-- _backgroundColor: "#123" -->
+<!-- _color: "#fff" -->
 # Finding images
 
 In most cases you can find images on [dockerhub](https://hub.docker.com/search). 
