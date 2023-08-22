@@ -1,6 +1,7 @@
 
 # Created by https://www.gitignore.io/api/node,windows,macos,linux,sublimetext,emacs,vim,visualstudiocode
 .venv/**
+docker/.venv/**
 ### Emacs ###
 # -*- mode: gitignore; -*-
 *~
@@ -250,3 +251,4 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/node,windows,macos,linux,sublimetext,emacs,vim,visualstudiocode
 docker/__pycache__/app.cpython-311.pyc
+docker/.venv/bin/activate
