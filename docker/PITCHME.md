@@ -149,7 +149,8 @@ WORKDIR /git/STOP
 CMD ["log"]
 ```
 ```bash
-docker build --ssh default . -t secret-example && docker run secret-example
+docker build --ssh default . -t secret-example
+docker run secret-example
 ```
 ---
 <!-- _backgroundColor: "#123" -->
