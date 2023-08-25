@@ -50,7 +50,10 @@ docker --help
 
 ###### IMPORTANT❗❗
 
-## Install  [docker autocomplete](https://docs.docker.com/compose/completion/)
+## Use docker autocomplete
+It's often installed on bash etc
+for powershell try [this](https://stackoverflow.com/questions/66479577/make-powershell-recommendation-like-linux-bash-e-g-docker)
+
 ---
 <!-- _backgroundColor: "#123" -->
 <!-- _color: "#fff" -->
